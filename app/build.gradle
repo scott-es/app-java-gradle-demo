@@ -18,8 +18,8 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
     // Intentionally vulnerable (CVE-2022-1471 SnakeYaml unsafe deserialization); scanner/demo only
     implementation 'org.yaml:snakeyaml:1.32'
-    // Intentionally vulnerable (CVE-2022-42004 Jackson deep wrapper nesting); scanner/demo only
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+    // Intentionally vulnerable (CVE-2021-33813 JDOM2 SAXBuilder XXE); scanner/demo only — obscure vs Jackson/Log4j
+    implementation 'org.jdom:jdom2:2.0.6'
 
 }
 version '1.0.4'
