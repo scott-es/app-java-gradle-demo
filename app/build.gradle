@@ -16,6 +16,8 @@ dependencies {
     implementation 'io.dropwizard:dropwizard-core:(2.1.0,2.1.5]'
     // Intentionally vulnerable (CVE-2021-44228 Log4Shell); for scanner/demo only — remove or upgrade before production
     implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+    // Not in Dropwizard SBOM tree; intentionally vulnerable (CVE-2023-1370 json-smart parser DoS); scanner/demo only
+    implementation 'net.minidev:json-smart:2.4.7'
 
 }
 version '1.0.4'
