@@ -20,6 +20,8 @@ dependencies {
     implementation 'net.minidev:json-smart:2.4.7'
     // Unrelated to web stack; intentionally vulnerable (CVE-2023-50868 dnsjava DNSSEC); scanner/demo only
     implementation 'dnsjava:dnsjava:3.5.1'
+    // Unlikely in Dropwizard deps; intentionally vulnerable (CVE-2021-21351 XStream deserialization); scanner/demo only
+    implementation 'com.thoughtworks.xstream:xstream:1.4.16'
 
 }
 version '1.0.4'
