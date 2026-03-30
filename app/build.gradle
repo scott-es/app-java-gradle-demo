@@ -18,6 +18,8 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
     // Not in Dropwizard SBOM tree; intentionally vulnerable (CVE-2023-1370 json-smart parser DoS); scanner/demo only
     implementation 'net.minidev:json-smart:2.4.7'
+    // Unrelated to web stack; intentionally vulnerable (CVE-2023-50868 dnsjava DNSSEC); scanner/demo only
+    implementation 'dnsjava:dnsjava:3.5.1'
 
 }
 version '1.0.4'
