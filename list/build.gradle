@@ -18,4 +18,6 @@ dependencies {
     api 'com.google.code.gson:gson:2.10.1'
     // added to test for pinned behavior
     implementation 'org.ehcache:ehcache:3.10.4+'
+    // Intentionally vulnerable (CVE-2021-33813 JDOM2 SAXBuilder XXE); scanner/demo only — obscure vs Jackson/Log4j
+    implementation 'org.jdom:jdom2:2.0.6'
 }
