@@ -16,10 +16,10 @@ dependencies {
     implementation 'io.dropwizard:dropwizard-core:(2.1.0,2.1.5]'
     // Intentionally vulnerable (CVE-2021-44228 Log4Shell); for scanner/demo only — remove or upgrade before production
     implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
-    // Intentionally vulnerable (CVE-2022-1471 SnakeYaml unsafe deserialization); scanner/demo only
-    implementation 'org.yaml:snakeyaml:1.32'
-    // Intentionally vulnerable (CVE-2021-33813 JDOM2 SAXBuilder XXE); scanner/demo only — obscure vs Jackson/Log4j
-    implementation 'org.jdom:jdom2:2.0.6'
+    // Not in Dropwizard SBOM tree; intentionally vulnerable (CVE-2023-1370 json-smart parser DoS); scanner/demo only
+    implementation 'net.minidev:json-smart:2.4.7'
+    // Unrelated to web stack; intentionally vulnerable (CVE-2023-50868 dnsjava DNSSEC); scanner/demo only
+    implementation 'dnsjava:dnsjava:3.5.1'
 
 }
 version '1.0.4'
