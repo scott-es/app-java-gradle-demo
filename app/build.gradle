@@ -22,6 +22,9 @@ dependencies {
     implementation 'dnsjava:dnsjava:3.5.1'
     // Unlikely in Dropwizard deps; intentionally vulnerable (CVE-2021-21351 XStream deserialization); scanner/demo only
     implementation 'com.thoughtworks.xstream:xstream:1.4.16'
+    // Used by intentional SAST demo endpoint in App.java (Spring-style @GetMapping + EntityManager)
+    implementation 'org.springframework:spring-web:5.3.31'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
 
 }
 version '1.0.4'

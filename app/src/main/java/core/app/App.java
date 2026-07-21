@@ -9,13 +9,39 @@ import static core.utilities.StringUtils.join;
 import static core.utilities.StringUtils.split;
 import static core.app.MessageUtils.getMessage;
 
-import org.apache.commons.text.WordUtils;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.apache.commons.text.WordUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class App {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
     public static void main(String[] args) {
         LinkedList tokens;
         tokens = split(getMessage());
         String result = join(tokens);
         System.out.println(WordUtils.capitalize(result));
     }
+
+    /**
+     * Intentionally insecure for SAST demo only — do not ship as-is.
+     * No authentication on /admin plus string-built JPQL (access control + input validation / SQLi).
+     */
+    @GetMapping("/admin/users")
+    @SuppressWarnings("unchecked")
+    public List<User> findUsers(@RequestParam String name) {
+        return entityManager.createQuery(
+                "SELECT u FROM User u WHERE u.name = '" + name + "'")
+                .getResultList();
+    }
 }
+
